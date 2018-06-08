@@ -16,12 +16,17 @@ public class MoveFileToFolder
 				int min=65;
 				Random rand = new Random();
 				int random= rand.nextInt((max - min) + 1) + min;
+				
 				System.out.println(random);
-			
-				File newfile = new File("D:\\Random\\"+ random + ".txt");
+				
+				String strAsciiTab = Character.toString((char)random);
+				
+				System.out.println(strAsciiTab);
+				
+				File newfile = new File("D:\\Random\\"+ strAsciiTab + ".txt");
 				newfile.createNewFile();
 		
-				File newFolder= new File("D:\\Random\\" + random + "\\");
+				File newFolder= new File("D:\\Random\\" + strAsciiTab + "\\");
 				newFolder.mkdir();	
 						
 				FileUtils.copyFileToDirectory(newfile, newFolder);
